@@ -1,0 +1,34 @@
+﻿@model FutureNote.Web.Models.NoteViewModel
+
+@{
+    ViewData["Title"] = "Write a note";
+}
+
+<h1>Write a note</h1>
+
+<p>Write a note and pick a date. You can share the note's location but it stays sealed until the chosen date.</p>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <textarea asp-for="Text" class="form-control" placeholder="Write your note here..." rows="6" autofocus></textarea>
+                <span asp-validation-for="Text" class="text-danger"></span>
+                <div id="text-counter-parent" class="small float-right"><span id="char-counter">500</span>/500</div>
+            </div>
+            <div class="form-group">
+                <label asp-for="SealedUntil" class="control-label"></label>
+                <input asp-for="SealedUntil" class="form-control col-lg-4" />
+                <span asp-validation-for="SealedUntil" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Seal my note" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

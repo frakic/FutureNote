@@ -1,0 +1,16 @@
+﻿@model DateTime
+
+@{
+    TimeSpan ts = Model.Date - DateTime.Today;
+    ViewData["Title"] = "Note is sealed";
+}
+
+<h1>Note is sealed</h1>
+
+<div>
+    <hr />
+    <p>This note is sealed until @Model.ToShortDateString()</p>
+    <p>Please come back in @ts.Days days.</p>
+
+        <input type="submit" value="Read" class="btn btn-secondary" disabled/>
+</div>

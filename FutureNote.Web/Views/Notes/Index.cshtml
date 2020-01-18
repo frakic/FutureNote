@@ -1,0 +1,37 @@
+﻿@model FutureNote.Web.Models.NoteViewModel
+
+@{
+    ViewData["Title"] = "Future note";
+}
+
+<h1>Future note</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Text)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Text)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SealedOn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SealedOn)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SealedUntil)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SealedUntil)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstRead)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstRead)
+        </dd>
+    </dl>
+</div>
