@@ -4,6 +4,8 @@ using FutureNote.Service.Interfaces;
 using FutureNote.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace FutureNote.Web.Controllers
@@ -54,33 +56,46 @@ namespace FutureNote.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Open(int? id)
         {
-            if (id == null)
+            using(var client = new HttpClient())
             {
-                return NotFound();
+                HttpContent httpContent = new StringContent("Your JSON-String", Encoding.UTF8, "application/json-patch+json");
+                client.BaseAddress = new Uri("localhost:44305/api/Notes/");
+                var responseTask = client.PatchAsync(client.BaseAddress + "Open/" + id, httpContent);
+                responseTask.Wait();
+
+                var result = responseTask.Result;
             }
+            return RedirectToAction("Index");
 
-            NoteDto noteDto = await noteService.FindNoteById((int)id);
 
-            if (noteDto == null)
-            {
-                return NotFound();
-            }
 
-            try
-            {
-                NoteDto newNoteDto = await noteService.OpenNote((int)id);
+            //    if (id == null)
+            //    {
+            //        return NotFound();
+            //    }
 
-                return RedirectToAction(nameof(Index), new { n = noteDto.Guid });
-            }
-            catch
-            {
-                return Problem();
-            }
-        }
+            //    NoteDto noteDto = await noteService.FindNoteById((int)id);
 
-        public IActionResult Create()
-        {
-            return View();
+            //    if (noteDto == null)
+            //    {
+            //        return NotFound();
+            //    }
+
+            //    try
+            //    {
+            //        NoteDto newNoteDto = await noteService.OpenNote((int)id);
+
+            //        return RedirectToAction(nameof(Index), new { n = noteDto.Guid });
+            //    }
+            //    catch
+            //    {
+            //        return Problem();
+            //    }
+            //}
+
+            //public IActionResult Create()
+            //{
+            //    return View();
         }
 
         [HttpPost]

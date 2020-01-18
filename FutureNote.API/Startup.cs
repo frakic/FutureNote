@@ -2,6 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FutureNote.BusinessLogic.Interfaces;
+using FutureNote.BusinessLogic.Workflows;
+using FutureNote.DataAccess.Interfaces;
+using FutureNote.DataAccess.Repositories;
+using FutureNote.Service.Interfaces;
+using FutureNote.Service.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +32,10 @@ namespace FutureNote.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.Add(new ServiceDescriptor(typeof(INoteService), typeof(NoteService), ServiceLifetime.Transient));
+            services.Add(new ServiceDescriptor(typeof(INoteWorkflow), typeof(NoteWorkflow), ServiceLifetime.Transient));
+            services.Add(new ServiceDescriptor(typeof(INoteRepository), typeof(NoteRepository), ServiceLifetime.Transient));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

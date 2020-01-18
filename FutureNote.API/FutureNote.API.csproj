@@ -10,7 +10,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FutureNote.BusinessLogic\FutureNote.BusinessLogic.csproj" />
+    <ProjectReference Include="..\FutureNote.DataAccess\FutureNote.DataAccess.csproj" />
     <ProjectReference Include="..\FutureNote.Service\FutureNote.Service.csproj" />
+    <ProjectReference Include="..\FutureNote.Web\FutureNote.Web.csproj" />
   </ItemGroup>
 
 
