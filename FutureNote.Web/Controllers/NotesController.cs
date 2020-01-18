@@ -10,7 +10,6 @@ namespace FutureNote.Web.Controllers
 {
     public class NotesController : Controller
     {
-        //private readonly FutureNoteContext _context;
         private readonly INoteService noteService;
         private readonly IMapper mapper;
 

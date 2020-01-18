@@ -5,13 +5,15 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FutureNote.Web", "FutureNote.Web\FutureNote.Web.csproj", "{AB335C0A-B7C5-44D7-81E6-75BD801CA8DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FutureNote.Entities", "FutureNote.Entities\FutureNote.Entities.csproj", "{486B1AB1-E1FE-41CF-AD6C-AC84F6BE7D13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FutureNote.Entities", "FutureNote.Entities\FutureNote.Entities.csproj", "{486B1AB1-E1FE-41CF-AD6C-AC84F6BE7D13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FutureNote.DataAccess", "FutureNote.DataAccess\FutureNote.DataAccess.csproj", "{7AA93C7D-EBF4-49D6-9AAD-B0CED02D06B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FutureNote.DataAccess", "FutureNote.DataAccess\FutureNote.DataAccess.csproj", "{7AA93C7D-EBF4-49D6-9AAD-B0CED02D06B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FutureNote.Service", "FutureNote.Service\FutureNote.Service.csproj", "{C5EAED18-CCBF-4FA2-8EC3-FBF692C801C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FutureNote.Service", "FutureNote.Service\FutureNote.Service.csproj", "{C5EAED18-CCBF-4FA2-8EC3-FBF692C801C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FutureNote.BusinessLogic", "FutureNote.BusinessLogic\FutureNote.BusinessLogic.csproj", "{6B693D80-3B5D-4384-B68B-B8173F4DA0D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FutureNote.BusinessLogic", "FutureNote.BusinessLogic\FutureNote.BusinessLogic.csproj", "{6B693D80-3B5D-4384-B68B-B8173F4DA0D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FutureNote.API", "FutureNote.API\FutureNote.API.csproj", "{FF75F6E3-A01A-4023-81FF-4D983DAD632C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{6B693D80-3B5D-4384-B68B-B8173F4DA0D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B693D80-3B5D-4384-B68B-B8173F4DA0D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B693D80-3B5D-4384-B68B-B8173F4DA0D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF75F6E3-A01A-4023-81FF-4D983DAD632C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF75F6E3-A01A-4023-81FF-4D983DAD632C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF75F6E3-A01A-4023-81FF-4D983DAD632C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF75F6E3-A01A-4023-81FF-4D983DAD632C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
