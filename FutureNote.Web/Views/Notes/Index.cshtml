@@ -3,18 +3,11 @@
 @{
     ViewData["Title"] = "Future note";
 }
-
-<h1>Future note</h1>
+<textarea asp-for="Text" disabled></textarea>
 
 <div>
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Text)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Text)
-        </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.SealedOn)
         </dt>
