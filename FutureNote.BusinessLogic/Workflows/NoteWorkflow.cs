@@ -44,7 +44,6 @@ namespace FutureNote.BusinessLogic.Workflows
         {
             //Status -> Open; FirstRead -> Today
             UpdateNoteStatusAndDate(note);
-
             await noteRepository.UpdateNoteInDb(note);
             return note;
         }

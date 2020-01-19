@@ -1,6 +1,6 @@
-# Future notes
+# Future note
 
-Future notes is a .NET Core Web application in which unregistered users can leave notes to each other. Each note gets its own URI so that it can be shared and read afterwards.
+Future note is a .NET Core Web application in which unregistered users can leave notes to each other. Each note gets its own URI so that it can be shared and read afterwards.
 Users can also choose to "seal" their note, so that it can't be viewed by anyone before the date they pick.
 
 The point of this weekend project was to further practice developing multilayered applications, and getting more familiar with .NET Core.

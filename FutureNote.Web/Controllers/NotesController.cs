@@ -60,7 +60,7 @@ namespace FutureNote.Web.Controllers
                 return NotFound();
             }
 
-            NoteDto noteDto = await noteService.FindNoteById((int)id);
+            NoteDto noteDto = await noteService.FindNoteDtoById((int)id);
 
             if (noteDto == null)
             {
@@ -70,8 +70,7 @@ namespace FutureNote.Web.Controllers
             try
             {
                 NoteDto newNoteDto = await noteService.OpenNote((int)id);
-
-                return RedirectToAction(nameof(Index), new { n = noteDto.Guid });
+                return RedirectToAction(nameof(Index), new { n = newNoteDto.Guid });
             }
             catch
             {

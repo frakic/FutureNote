@@ -33,7 +33,7 @@ namespace FutureNote.Service.Services
             }
         }
 
-        public async Task<NoteDto> FindNoteById(int id)
+        public async Task<NoteDto> FindNoteDtoById(int id)
         {
             Note note = await noteWorkflow.FindNoteById(id);
             return MapNoteToDto(note);
@@ -41,10 +41,9 @@ namespace FutureNote.Service.Services
 
         public async Task<NoteDto> OpenNote(int id)
         {
-            NoteDto noteDto = await FindNoteById(id);
-            Note note = MapDtoToNote(noteDto);
-            Note newNote = await noteWorkflow.OpenNote(note);
-            NoteDto newNoteDto = MapNoteToDto(newNote);
+            Note note = await FindNoteById(id);
+            await noteWorkflow.OpenNote(note);
+            NoteDto newNoteDto = MapNoteToDto(note);
 
             return newNoteDto;
         }
@@ -69,6 +68,12 @@ namespace FutureNote.Service.Services
         private Note MapDtoToNote(NoteDto noteDto)
         {
             return mapper.Map<Note>(noteDto);
+        }
+
+        private async Task<Note> FindNoteById(int id)
+        {
+            Note note = await noteWorkflow.FindNoteById(id);
+            return note;
         }
     }
 }
