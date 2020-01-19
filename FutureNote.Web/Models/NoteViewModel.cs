@@ -23,7 +23,7 @@ namespace FutureNote.Web.Models
         public DateTime SealedOn { get; set; }
 
         [Required]
-        [Display(Name = "Readable on")]
+        [Display(Name = "Sealed until")]
         [DataType(DataType.Date)]
         [CurrentOrFutureDate(ErrorMessage = "Pick a present or future date.")]
         [DisplayFormat(
