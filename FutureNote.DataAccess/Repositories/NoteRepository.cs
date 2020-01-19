@@ -51,7 +51,6 @@ namespace FutureNote.DataAccess.Repositories
 
         public async Task<Note> UpdateNoteInDb(Note note)
         {
-            context.Entry(note).State = EntityState.Modified;
             context.Update(note);
             await context.SaveChangesAsync();
             return note;
